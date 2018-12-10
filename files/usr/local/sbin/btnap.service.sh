@@ -24,8 +24,8 @@ if [ "$MODE" = "server" ]; then
      brctl stp "$BR_DEV" off
      ip addr add "$BR_IP" dev "$BR_DEV"
      [ -n "$ADD_IF" ] && brctl addif "$BR_DEV" "$ADD_IF"
-     ip link set "$BR_DEV" up
      [ -n "$BR_GW" ] && ip route add default via "$BR_GW" dev "$BR_DEV"
+     ip link set "$BR_DEV" up
   fi
 fi
 
